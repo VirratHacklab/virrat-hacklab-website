@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tikis on Virrat Hacklab</title>
-    <link>https://virrat.hacklab.fi/tikis/</link>
+    <link>/tikis/</link>
     <description>Recent content in Tikis on Virrat Hacklab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fi</language>
     <lastBuildDate>Wed, 25 Sep 2019 11:02:00 +0300</lastBuildDate>
     
-	<atom:link href="https://virrat.hacklab.fi/tikis/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tikis/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>TIKIS Alkaa</title>
-      <link>https://virrat.hacklab.fi/tikis/2019-09-25-tikis-alkaa/</link>
+      <link>/tikis/2019-09-25-tikis-alkaa/</link>
       <pubDate>Wed, 25 Sep 2019 11:02:00 +0300</pubDate>
       
-      <guid>https://virrat.hacklab.fi/tikis/2019-09-25-tikis-alkaa/</guid>
+      <guid>/tikis/2019-09-25-tikis-alkaa/</guid>
       <description>&lt;p class=&#34;paragraph&#34;&gt;
     Tiede- ja Teknologiakerho TIKIS aloittaa toimintansa jälleen maanantaina 30.9.2019! Tällä kertaa lähdemme pyörittämään kerhoa kahdelle ryhmälle:
     &#34;Ykköset&#34; ja &#34;Kolmoset&#34;&lt;br /&gt;
@@ -28,10 +28,10 @@
     
     <item>
       <title>TIKIS BrainTech</title>
-      <link>https://virrat.hacklab.fi/tikis/2019-03-14-tikis-braintech/</link>
+      <link>/tikis/2019-03-14-tikis-braintech/</link>
       <pubDate>Wed, 14 Mar 2018 14:02:00 +0200</pubDate>
       
-      <guid>https://virrat.hacklab.fi/tikis/2019-03-14-tikis-braintech/</guid>
+      <guid>/tikis/2019-03-14-tikis-braintech/</guid>
       <description>&lt;p class=&#34;paragraph&#34;&gt;
     TIKIS BrainTech -konsepti on osa isompaa hanketta, jonka Virrat Hacklab ry käynnistää tänä keväänä yhdessä PoKo ry:n kanssa. Konsepti, kurssit 
     ja niiden materiaalit tuotetaan kansainvälistä yhteystyötä silmällä pitäen kokonaisuudessaan englanniksi. TIKIS BrainTech Robotics on konseptin 

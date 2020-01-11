@@ -3,51 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://virrat.hacklab.fi/en/blogi/</loc>
+    <loc>/en/blogi/</loc>
     <lastmod>2019-03-14T10:45:00+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fi"
-                href="https://virrat.hacklab.fi/blogi/"
+                href="/blogi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://virrat.hacklab.fi/en/blogi/"
+                href="/en/blogi/"
                 />
   </url>
   
   <url>
-    <loc>https://virrat.hacklab.fi/en/blogi/2019/2019-03-14-ubuntu-arm64-electron-docker-raspberry-pi/</loc>
+    <loc>/en/blogi/2019/2019-03-14-ubuntu-arm64-electron-docker-raspberry-pi/</loc>
     <lastmod>2019-03-14T10:45:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://virrat.hacklab.fi/en/</loc>
+    <loc>/en/</loc>
     <lastmod>2019-03-14T10:45:00+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fi"
-                href="https://virrat.hacklab.fi/"
+                href="/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://virrat.hacklab.fi/en/"
+                href="/en/"
                 />
   </url>
   
   <url>
-    <loc>https://virrat.hacklab.fi/en/series/</loc>
+    <loc>/en/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fi"
-                href="https://virrat.hacklab.fi/series/"
+                href="/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://virrat.hacklab.fi/en/series/"
+                href="/en/series/"
                 />
   </url>
   

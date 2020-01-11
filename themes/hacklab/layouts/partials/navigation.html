@@ -9,7 +9,7 @@
         {{- $currentPage := . -}}
         {{ range .Site.Menus.main }}
             <li class="menu-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-                <a class="tk-korolev-compressed nav-link" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+                <a class="tk-korolev-compressed nav-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
             </li>
         {{ end }}
     </ul>
