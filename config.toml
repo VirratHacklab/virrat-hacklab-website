@@ -1,7 +1,6 @@
 defaultContentLanguage = "fi"
 googleAnalytics = "UA-155551221-1"
 
-baseURL = "https://virrat.hacklab.fi/"
 languageCode = "fi"
 
 title = "Virrat Hacklab"
