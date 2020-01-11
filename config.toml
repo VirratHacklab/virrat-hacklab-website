@@ -1,0 +1,60 @@
+defaultContentLanguage = "fi"
+googleAnalytics = "UA-155551221-1"
+
+baseURL = "https://virrat.hacklab.fi/"
+languageCode = "fi"
+
+title = "Virrat Hacklab"
+theme = "hacklab"
+
+[params]
+    description = "Virrat Hacklab on yhteisöllinen työpaja, jossa ihmiset pääsevät toteuttamaan omia projektejaan yhteiskäyttöön hankituilla välineillä"
+    images = ["assets/images/frontpage.jpg"]
+    title = "Virrat Hacklab"
+
+[taxonomies]
+    series = "series"
+
+[languages.fi]
+    weight = 0
+    languageName = "FI"
+[[languages.fi.menu.main]]
+    name = "ETUSIVU"
+    url = "/"
+    weight = 1
+[[languages.fi.menu.main]]
+    name = "HACKLAB"
+    url = "/hacklab/"
+    weight = 2
+[[languages.fi.menu.main]]
+    name = "BLOGI"
+    url = "/blogi/"
+    weight = 3
+[[languages.fi.menu.main]]
+    name = "TIKIS"
+    url = "/tikis/"
+    weight = 4
+[[languages.fi.menu.main]]
+    name = "TAPAHTUMAT"
+    url = "/tapahtumat/"
+    weight = 5
+[[languages.fi.menu.main]]
+    name = "SÄÄNNÖT"
+    url = "/saannot/"
+    weight = 6
+
+[languages.en]
+    weight = 10
+    languageName = "EN"
+[[languages.en.menu.main]]
+    name = "HOME"
+    url = "/"
+    weight = 11
+[[languages.en.menu.main]]
+    name = "HACKLAB"
+    url = "/"
+    weight = 12
+[[languages.en.menu.main]]
+    name = "BLOG"
+    url = "/blogi/"
+    weight = 13

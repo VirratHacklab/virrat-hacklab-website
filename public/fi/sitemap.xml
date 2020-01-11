@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/tikis/</loc>
+    <lastmod>2019-09-25T11:02:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/tikis/2019-09-25-tikis-alkaa/</loc>
+    <lastmod>2019-09-25T11:02:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/</loc>
+    <lastmod>2019-09-25T11:02:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://virrat.hacklab.fi/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fi"
+                href="https://virrat.hacklab.fi/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/tapahtumat/2020-03-15-avoimet-ovet/</loc>
+    <lastmod>2018-03-15T09:20:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/tapahtumat/</loc>
+    <lastmod>2018-03-15T09:20:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/tikis/2019-03-14-tikis-braintech/</loc>
+    <lastmod>2018-03-14T14:02:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/blogi/</loc>
+    <lastmod>2018-02-18T13:30:00+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://virrat.hacklab.fi/en/blogi/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fi"
+                href="https://virrat.hacklab.fi/blogi/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/blogi/2018-02-18-iot-ohjelmointia/</loc>
+    <lastmod>2018-02-18T13:30:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/blogi/2017-11-25-tiede-ja-teknologiakerho-kaynnistyy/</loc>
+    <lastmod>2017-11-25T12:44:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/blogi/2017-11-06-tiede-ja-teknologiakerho-x-bosch/</loc>
+    <lastmod>2017-11-06T18:41:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/tikis/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/hacklab/equipment/ender3/</loc>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/hacklab/equipment/laser/</loc>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/hacklab/equipment/folgertech-ft5/</loc>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/hacklab/</loc>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/hacklab/equipment/workbee/</loc>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://virrat.hacklab.fi/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fi"
+                href="https://virrat.hacklab.fi/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/saannot/</loc>
+  </url>
+  
+</urlset>

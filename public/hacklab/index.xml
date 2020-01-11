@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hacklab on Virrat Hacklab</title>
+    <link>https://virrat.hacklab.fi/hacklab/</link>
+    <description>Recent content in Hacklab on Virrat Hacklab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fi</language>
+    
+	<atom:link href="https://virrat.hacklab.fi/hacklab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creality3D Ender 3 Pro, 3D-Tulostin</title>
+      <link>https://virrat.hacklab.fi/hacklab/equipment/ender3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://virrat.hacklab.fi/hacklab/equipment/ender3/</guid>
+      <description> Hieno tulstin! </description>
+    </item>
+    
+    <item>
+      <title>eBay China, Laser</title>
+      <link>https://virrat.hacklab.fi/hacklab/equipment/laser/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://virrat.hacklab.fi/hacklab/equipment/laser/</guid>
+      <description>Tyyppi: Hiilidioksidilaser (CO2 carbon dioxide laser) Teho: 60W Työskentelyalue: 500 x 700 Materiaalit: Akryyli, vaneri   </description>
+    </item>
+    
+    <item>
+      <title>FolgerTech FT-5, 3D-Tulostin</title>
+      <link>https://virrat.hacklab.fi/hacklab/equipment/folgertech-ft5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://virrat.hacklab.fi/hacklab/equipment/folgertech-ft5/</guid>
+      <description>WIKI 3D-Tulostin Ender 3 Tyyppi:  Teho: 60W Työskentelyalue: 500 x 700 Materiaalit: Akryyli, vaneri     </description>
+    </item>
+    
+    <item>
+      <title>Ooznest WorkBee, CNC-jyrsin</title>
+      <link>https://virrat.hacklab.fi/hacklab/equipment/workbee/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://virrat.hacklab.fi/hacklab/equipment/workbee/</guid>
+      <description>WIKI 3D-Tulostin Ender 3 Tyyppi: Hiilidioksidilaser (CO2 carbon dioxide laser) Teho: 60W Työskentelyalue: 500 x 700 Materiaalit: Akryyli, vaneri     </description>
+    </item>
+    
+  </channel>
+</rss>

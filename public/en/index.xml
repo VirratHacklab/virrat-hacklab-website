@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virrat Hacklab</title>
+    <link>https://virrat.hacklab.fi/en/</link>
+    <description>Recent content on Virrat Hacklab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fi</language>
+    <lastBuildDate>Thu, 14 Mar 2019 10:45:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://virrat.hacklab.fi/en/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu ARM64 and Electron inside Docker on Rasperry Pi</title>
+      <link>https://virrat.hacklab.fi/en/blogi/2019/2019-03-14-ubuntu-arm64-electron-docker-raspberry-pi/</link>
+      <pubDate>Thu, 14 Mar 2019 10:45:00 +0200</pubDate>
+      
+      <guid>https://virrat.hacklab.fi/en/blogi/2019/2019-03-14-ubuntu-arm64-electron-docker-raspberry-pi/</guid>
+      <description>&lt;p class=&#34;paragraph&#34;&gt;
+    How to run containerized &lt;a href=&#34;https://electronjs.org/&#34; target=&#34;_blank&#34;&gt;electron&lt;/a&gt; app on a Raspberry Pi using ARM64 architecture? With Ubuntu!
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

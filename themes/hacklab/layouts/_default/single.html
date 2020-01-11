@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body>
+        {{- partial "header.html" . -}}
+        {{- partial "jumbotron.html" . -}}
+        <article id="content">
+            <h1 id="page-header">{{ .Title }}</h1>
+            {{ .Content }}
+        </article>
+        {{- partial "disqus.html" . -}}
+        {{- partial "navigation.html" . -}}
+        {{- partial "footer.html" . -}}
+    </body>
+</html>

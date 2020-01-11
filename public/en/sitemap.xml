@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/en/blogi/</loc>
+    <lastmod>2019-03-14T10:45:00+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fi"
+                href="https://virrat.hacklab.fi/blogi/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://virrat.hacklab.fi/en/blogi/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/en/blogi/2019/2019-03-14-ubuntu-arm64-electron-docker-raspberry-pi/</loc>
+    <lastmod>2019-03-14T10:45:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/en/</loc>
+    <lastmod>2019-03-14T10:45:00+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fi"
+                href="https://virrat.hacklab.fi/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://virrat.hacklab.fi/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://virrat.hacklab.fi/en/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fi"
+                href="https://virrat.hacklab.fi/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://virrat.hacklab.fi/en/series/"
+                />
+  </url>
+  
+</urlset>

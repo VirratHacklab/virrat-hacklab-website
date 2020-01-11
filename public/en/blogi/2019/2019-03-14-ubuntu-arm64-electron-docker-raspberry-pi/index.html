@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png">
+
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/hacklab.css">
+
+<script src="https://use.typekit.net/drz2eor.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-155551221-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta property="og:title" content="Ubuntu ARM64 and Electron inside Docker on Rasperry Pi" />
+<meta property="og:description" content="
+    How to run containerized electron app on a Raspberry Pi using ARM64 architecture? With Ubuntu!
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://virrat.hacklab.fi/en/blogi/2019/2019-03-14-ubuntu-arm64-electron-docker-raspberry-pi/" />
+<meta property="og:image" content="https://virrat.hacklab.fi/IMG_8702.jpg" />
+<meta property="og:image" content="https://virrat.hacklab.fi/balena_etcher.png" />
+<meta property="og:image" content="https://virrat.hacklab.fi/system-boot.png" />
+<meta property="article:published_time" content="2019-03-14T10:45:00+02:00" />
+<meta property="article:modified_time" content="2019-03-14T10:45:00+02:00" /><meta property="og:site_name" content="Virrat Hacklab" />
+
+
+<script type="text/javascript" src="/js/hacklab.js"></script>
+
+<title>Ubuntu ARM64 and Electron inside Docker on Rasperry Pi</title>
+<body><header>
+    <div id="navigation-placeholder">
+        <div id="hidden-logo">
+            <img src="/assets/images/favicon.png" width="48" />
+        </div>
+    </div>
+    <div id="logo">
+        <video height="96" autoplay muted playsinline autobuffer>
+            <source src="/assets/videos/logo_notext_burst_96.mp4" type="video/mp4">
+            <img src="/assets/images/favicon.png" />
+        </video>
+    </div>
+</header>
+
+    <section id="jumbotron">
+        
+            <div id="aspect-ratio" style="background-image: url(IMG_8702.jpg)">
+        
+            <img src="/assets/images/169.png" width="100%" />
+        </div>
+    </section>
+
+<article id="content">
+            <h1 id="page-header">Ubuntu ARM64 and Electron inside Docker on Rasperry Pi</h1>
+            <p class="paragraph">
+    I have been a long time fan of <a href="https://electronjs.org/" target="_blank">electron</a>. It is a tool with which you can
+    "Build cross platform desktop apps with JavaScript, HTML, and CSS". I was really excited when I finally realized
+    that there is a <a href="https://github.com/electron-userland/electron-packager" target="_blank">packager</a> for electron and even
+    more so for the <a href="https://github.com/electron-userland/electron-installer-debian" target="_blank">debian installer</a>
+</p>
+
+<p class="paragraph">
+    I've had good experience with running electron on Raspberry Pi in the past, and it was time to do something with it again.
+</p>
+
+<p class="paragraph">
+    I have a few Raspberry Pi 3 Model B lying around and this is a guide specifically for Model B. I would really appreciate if someone can tell
+    <a href="mailto:antti@virrat.hacklab.fi">me</a> if you can get this to work with B+ and A+ as well! I also have a couple of official
+    Raspberry Pi 7" touchscreen displays in my disposal so we use one of those as well.
+</p>
+
+<div class="tk-serenity">
+    <p class="paragraph">
+        Table of contents:
+    </p>
+    <ul class="disc">
+        <li><a href="#start">LET'S GET STARTED</a></li>
+        <li><a href="#wlan">SETTING UP WIRELESS NETWORKING</a></li>
+        <li><a href="#xwindow">X WINDOW SYSTEM</a></li>
+        <li><a href="#docker">INSTALLING DOCKER</a></li>
+        <li><a href="#packaging">PACKAGING THE APPLICATION</a></li>
+        <li><a href="#running">RUNNING THE APPLICATION</a></li>
+        <li><a href="#further">FURTHER DEVELOPMENT</a></li>
+        <li><a href="#comments">DISQUS</a></li>
+    </ul>
+</div>
+
+<h3 id="start" class="header in-between">Let's get started</h3>
+
+<p class="paragraph">
+    <a href="https://wiki.ubuntu.com/ARM/RaspberryPi" target="_blank">Ubuntu Wiki</a> has a dedicated page for Raspberry Pi and they're providing
+    a very convenient image with preinstalled 18.04 LTS server for Raspberry Pi Model 3 B/B+:
+    <a href="http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04.2-preinstalled-server-arm64+raspi3.img.xz" target="_blank">ubuntu-18.04.2-preinstalled-server-arm64+raspi3.img.xz</a>
+    (4G image, 419MB compressed)
+</p>
+
+<p class="paragraph">
+    To get this image into an SD-card, I like to use <a href="https://www.balena.io/etcher/" target="_blank">BalenaEtcher</a>
+    (it is actually built with Electron as well), which get's the job done without any extra fuzz or learning command-line tools. I use macOS for my
+    day-to-day activities, but because of Electron, they have packaged it to other platforms as well.
+    <img src="balena_etcher.png" width="100%" />
+    It's as easy as 1-2-3. Select an image (you don't even need to decompress it first), select the SD-card and click Flash!
+</p>
+
+<p class="paragraph">
+    Now, if you have a display and want to utilize it from the beginning, we need to do one thing first. When you open up the contents of the SD-card
+    we just made, you will see something like this:
+    <img src="system-boot.png" width="100%" />
+    We are interested in config.txt which looks like this:
+    <pre>
+        <code class="plaintext">
+    enable_uart=1
+    kernel=kernel8.bin
+    device_tree_address=0x03000000
+    dtparam=i2c_arm=on
+    dtparam=spi=on
+    arm_64bit=1
+        </code>
+    </pre>
+    <p class="paragraph">
+        Before we boot the thing, we want to append these two lines into this file:
+    </p>
+    <pre>
+        <code class="plaintext">
+    ignore_lcd=0
+    lcd_rotate=2
+        </code>
+    </pre>
+    <p class="paragraph">
+        By turning "ignore_lcd" off we are telling the kernel to look for an LCD display from the Display Serial Interface (DSI).
+        The other one "lcd_rotate" will rotate the display 180&#176;. I needed this because I installed the legs for my stand upside down :).
+        You might have different need for rotating the display and this is how it's done.
+    </p>
+</p>
+
+<h3 id="wlan" class="header in-between">Setting up Wireless Networking</h3>
+
+<p class="paragraph">
+    Now we can put in the SD-card and boot up the thing and update the software catalogs and upgrade all packages. After first login with username
+    <code>ubuntu</code> and the default password <code>ubuntu</code> you are prompted for a password change. Once this step is complete
+    you can start installing new software. The ubuntu user is in sudoers group by default, so you should be able to run super-user commands by
+    providing your own password when prompted.
+
+    <pre>
+        <code class="bash">
+    sudo apt-get update && sudo apt-get upgrade
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        Then install the needed dependencies
+    </p>
+    <pre>
+        <code class="bash">
+    sudo apt-get install -y wireless-tools wpasupplicant
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        After this we can enable the wireless interface, which should be wlan0 by default, at least with Raspberry Pi 3 Model B.
+    </p>
+
+    <pre>
+        <code class="bash">
+    sudo ifconfig wlan0 up
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        In case you don't already know, or don't remember the SSID for your wireless network, you can run a scan to see what SSID's are being broadcasted.
+        Note that if you're using Model B, like I am, it only supports 2.4GHz wlan band so your 5GHz band is no good here. If you need to connect to a 5GHz
+        band, you need Model B+ or A+. A tip: If you are forced to work with only the Pi + Touchsreen display and can't scroll the terminal output, you can
+        pipe the output of iwlist into tools like less to read it and have the ability to scroll.
+    </p>
+
+    <pre>
+        <code class="bash">
+    sudo iwlist wlan0 scan | less
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        Ubuntu 18.04 is using <a href="https://netplan.io/" target="_blank">Netplan: The network configuration abstraction renderer</a> for its networking.
+        Let's go and configure that for our wireless network.
+    </p>
+
+    <pre>
+        <code class="bash">
+    sudo nano -w /etc/netplan/50-cloud.init.yaml
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        It should look something like this
+    </p>
+
+    <pre>
+        <code class="yaml">
+    network:
+        version: 2
+        ethernets:
+            eth0:
+                dhcp4: true
+                match:
+                    macaddress: b8:27:eb:47:a7:7e
+                set-name: eth0
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        Now let's add our wireless confguration to this file
+    </p>
+
+    <pre>
+        <code class="yaml">
+    network:
+        version: 2
+        renderer: networkd
+        ethernets:
+            eth0:
+                optional: true
+                dhcp4: true
+                match:
+                    macaddress: b8:27:eb:47:a7:7e
+                set-name: eth0
+        wifis:
+            wlan0:
+                optional: true
+                dhcp4: true
+                access-points:
+                    "Network SSID":
+                        password: "Network Password"
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        The wifis configuration is really pretty straightforward. We also add a couple of more things in there. We add <code>renderer: networkd</code>,
+        because the internet said so, not actually sure if it's needed or not, but there it is. Then in order to get rid of the boot-time cloud-init waiting
+        for network interfaces we add <code>optional: true</code> to both interfaces and that speeds up the boot signifigantly. If you're already reaching
+        the limits of your IPv4 entropy, you can add <code>dhcp6: true</code> where applicable.
+    </p>
+
+    <p class="paragraph">
+        Now we can generate and apply our configuration. You can use the <code>--debug</code> flag to have more verbose output in case any error should emerge
+        YAML is picky about indetations being correct, so it might be helpful
+    </p>
+
+    <pre>
+        <code class="bash">
+    sudo netplan --debug generate
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        If everything looks good we can go and apply the new settings
+    </p>
+
+    <pre>
+        <code class="bash">
+    sudo netplan apply
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        Finally we reboot and see whether our configuration was correct or not
+    </p>
+
+    <pre>
+        <code class="bash">
+    reboot
+        </code>
+    </pre>
+
+
+</p>
+
+<h3 id="xwindow" class="header in-between">X Window System</h3>
+
+<p class="paragraph">
+    We can now go ahead and install X Window System as the image provided is a server installation and
+    doesn't provide one by default.
+</p>
+
+<p class="paragraph">
+
+    Let's go and install X Server and <strong>Fluxbox</strong>. If the only reason to run X Window System is for Electron, we might as well choose
+    a very lightweight flavour. Hence, Fluxbox is a good choice for the hardware that we are using so that we leave as much of the resources available
+    to the software we really want to keep running. In this case the Electron app.
+
+    <pre>
+        <code class="bash">
+    sudo apt-get install -y xserver-xorg fluxbox xterm
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        After the installation is ready, we can testrun the X environment.
+    </p>
+
+    <pre>
+        <code class="bash">
+    startx
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        To save some time during testing things out it might be a good idea to start X straight after login. We can edit our profile and add the command
+    </p>
+
+    <pre>
+        <code class="bash">
+    nano -w ~/.profile
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        Append the following to the end of the file and save
+    </p>
+
+
+    <pre>
+        <code class="plaintext">
+    if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+      exec startx
+    fi
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        In order to finalize this there are multiple ways of starting things automatically including logging in, but we are going to leave that out
+        from this exercise. This will speed up things a bit already.
+    </p>
+
+</p>
+
+<h3 id="docker" class="header in-between">Installing Docker</h3>
+
+<p class="paragraph">
+    What we are still missing is <a href="https://www.docker.com/" target="_blank">Docker</a>. I followed
+    <a href="https://www.containerstack.io/installing-docker-on-arm64/" target="_blank">these</a> instructions from ContainerStack.io.
+
+    <p class="paragraph">
+        Again, first some dependencies and the tools we're going to use
+    </p>
+
+    <pre>
+        <code class="bash">
+    sudo apt-get install -y \
+        apt-transport-https \
+        ca-certificates \
+        curl \
+        gnupg2 \
+        software-properties-common
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        Then first, add the GPG signing key for Docker
+    </p>
+
+    <pre>
+        <code class="bash">
+    curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        After this we can add the repository
+    </p>
+
+
+    <pre>
+        <code class="bash">
+    echo "deb [arch=arm64] https://download.docker.com/linux/debian \
+        $(lsb_release -cs) stable" | \
+        sudo tee /etc/apt/sources.list.d/docker.list
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        Now we can update the software catalogs and go ahead and install docker runtime
+    </p>
+
+    <pre>
+        <code class="bash">
+    sudo apt-get update && sudo apt-get install -y docker-ce
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        If everything went smoothly you should be able to verify the installed version. At the time of writing, it was
+    </p>
+
+    <pre>
+        <code class="bash">
+    docker --version
+    Docker version 18.09.3, build 774a1f4
+        </code>
+    </pre>
+
+</p>
+
+<h3 id="packaging" class="header in-between">Packaging the application</h3>
+
+<p class="paragraph">
+    Finally the last piece of the puzzle is our application. Now, I'm going to assume that this is the real reason you are here and
+    that you already have your Electron application ready to go. If not, I think that there are plenty of very good resources out there
+    to go and scour.
+
+    <p class="paragraph">
+        Let's start from our package.json, which will already reveal us something about the magic that is about to happen
+    </p>
+
+    <pre>
+        <code class="json">
+    {
+        "name": "my-application",
+        "version": "1.2.3",
+        "description": "My Application",
+        "main": "app/index.js",
+        "scripts": {
+            "start": "node_modules/.bin/electron .",
+            "build": "node_modules/.bin/electron-packager . my-application --platform linux --arch arm64 --out dist/",
+            "debarm64": "node_modules/.bin/electron-installer-debian --src /usr/src/my-application/dist/my-application-linux-arm64/ --dest dist/installers/ --arch arm64"
+        },
+        "author": "Your Name &lt;your@name.com&gt;",
+        "license": "UNLICENSED",
+        "devDependencies": {
+            "electron-installer-debian": "^1.1.1",
+            "electron-packager": "^13.1.1",
+            "electron": "^4.0.6"
+        }
+    }
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        For making the build environment more portable, we are going to be building our application with two-stage Docker build. This is our Dockerfile
+    </p>
+
+    <pre>
+        <code class="json">
+    FROM arm64v8/debian:buster as builder
+
+    # Install other apt deps
+    RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+        && apt-get -y install \
+        wget \
+        gnupg2 \
+        lsb-release \
+        fakeroot
+
+    RUN wget -qO- https://deb.nodesource.com/setup_10.x | bash -
+    RUN apt-get install -y nodejs && rm -rf /var/lib/apt/lists/*
+
+    WORKDIR /usr/src/my-application
+
+    COPY package.json .
+
+    RUN JOBS=MAX npm install --unsafe-perm
+
+    COPY app/ ./app/
+
+    RUN DEBUG=electron-packager npm run build
+    RUN DEBUG=electron-installer-debian npm run debarm64
+
+    FROM arm64v8/debian:buster
+
+    ENV MY_APPLICATION_VERSION 1.2.3
+
+    RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+        && apt-get -y install \
+        libgtk-3-0 \
+        libnotify4 \
+        libnss3 \
+        libxss1 \
+        libxtst6 \
+        xdg-utils \
+        libuuid1 \
+        libasound2 \
+        libglib2.0-bin
+
+    WORKDIR /usr/src/my-application
+
+    COPY --from=builder /usr/src/my-application/dist/installers/my-application_${MY_APPLICATION_VERSION}_arm64.deb .
+
+    RUN dpkg -i my-application_${MY_APPLICATION_VERSION}_arm64.deb
+
+    CMD ["my-application"]
+
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        In the first build stage, we are using arm64v8 version of debian buster as a baseimage, build our application and package that to a
+        <code>.deb</code>. In the second stage, we can only install dependencies that are required running the package on an X Window System and
+        not to worry about the dependencies of the application as it's already packaged as a self-containing Electron executable. So now we can just
+        copy our package from the builder stage using <code>--from=builder</code> install the application and run it with <code>CMD</code>.
+    </p>
+
+    <p class="paragraph">
+        Now we can build the application
+    </p>
+
+    <pre>
+        <code class="bash">
+    docker build -t your-context/my-application:1.2.3 .
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        And then published
+    </p>
+
+    <pre>
+        <code class="bash">
+    docker publish your-context/my-application:1.2.3
+        </code>
+    </pre>
+</p>
+
+
+<h3 id="running" class="header in-between">Running the application</h3>
+
+<p class="paragraph">
+    Now we are ready to run our application! The only thing we need to do is to tell our application on which display to render itself and give
+    information how to authorize itself to the X Window System. So here is how to finally run it. After we have logged in and Fluxbox
+    has started, we can hit <code>ALT+F2</code> in order to get the RUN -dialog. Type in <code>xterm</code> and hit <code>ENTER</code>. Now, in terminal
+    we can run the container like this
+
+    <pre>
+        <code class="bash">
+    sudo docker run --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
+        your-context/my-application:1.2.3
+        </code>
+    </pre>
+
+    <p class="paragraph">
+        Your application should now be running in your Fluxbox inside a Docker container, on arm64 Ubuntu in Raspberry Pi 3 Model B.
+    </p>
+</p>
+
+<h3 id="further" class="header in-between">Further Development</h3>
+
+<div class="tk-serenity">
+    <p class="paragraph">
+        For my own application there are still a few things that I want to do:
+    </p>
+    <ul class="disc">
+        <li>Run an <a href="http://wiki.ros.org/docker/Tutorials/GUI" target="_blank">isolated rootless Docker container</a> (without sudo)</li>
+        <li>Automatically log in a kiosk user</li>
+        <li>Automatically start my application as the kiosk user</li>
+        <li>Disable mouse cursor for cleaner UX</li>
+    </ul>
+
+    <p class="paragraph">
+        And further down the line:
+    </p>
+    <ul class="disc">
+        <li>Run my application as a pod in <a href="https://k3s.io/" target="_blank">k3s</a></li>
+        <li>
+            Orchestrate my application with <a href="https://azure.microsoft.com/en-us/services/iot-edge/" target="_blank">Azure IoT Edge</a>
+            by running the IoT Edge Provider in a <a href="https://azure.microsoft.com/en-us/blog/manage-azure-iot-edge-deployments-with-kubernetes/" target="_blank">Virtual Kubelet</a>
+        </li>
+    </ul>
+
+    <p class="paragraph">
+        Please give feedback on my personal <a href="https://twitter.com/rintsi" target="_blank">Twitter</a>,
+        <a href="https://twitter.com/virrathacklab" target="_blank">Hacklab Twitter</a> or leave a comment with Disqus down below. Follow us on
+        <a href="https://instagram.com/virrathacklab" target="_blank">Instagram</a> and
+        <a href="https://facebook.com/virrathacklab" target="_blank">Facebook</a>
+    </p>
+</div>
+
+        </article><div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = '';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<div id="navigation-header">
+    <a class="menu-toggle" href="#navigation">
+        <img src="/assets/images/menu.svg" />
+    </a>
+    <div class="tk-korolev-compressed" id="title-text">VIRRAT HACKLAB</div>
+</div>
+<nav id="navigation">
+    <ul class="menu-list">
+            <li class="menu-item ">
+                <a class="tk-korolev-compressed nav-link" href="https://virrat.hacklab.fi/en/">HOME</a>
+            </li>
+        
+            <li class="menu-item ">
+                <a class="tk-korolev-compressed nav-link" href="https://virrat.hacklab.fi/en/">HACKLAB</a>
+            </li>
+        
+            <li class="menu-item ">
+                <a class="tk-korolev-compressed nav-link" href="https://virrat.hacklab.fi/en/blogi/">BLOG</a>
+            </li>
+        
+    </ul>
+
+    <div id="language-select">
+        <span class="language-select-text tk-korolev-compressed">Language</span>
+        <ul class="language-selector">
+            
+                <li class="tk-korolev-compressed"><a href="https://virrat.hacklab.fi/en/">EN</a></li>
+            
+                <li class="tk-korolev-compressed"><a href="https://virrat.hacklab.fi/">FI</a></li>
+            
+        </ul>
+    </div>
+</nav>
+<footer id="footer">
+    <div id="sponsors">
+        <h4 class="sponsors-header tk-korolev-compressed">Cloud Capacity Provided By</h4>
+        <ul class="sponsor-list">
+            <li class="sponsor">
+                <a href="https://upcloud.com/signup?utm_source=VirratHacklab&utm_medium=banner&utm_campaign=VirratHacklab" target="_blank">
+                    <img src="/assets/images/sponsors/upcloud.svg" height="40" />
+                </a>
+            </li>
+        </ul>
+
+        <p class="paragraph">
+            &tilde;&tilde;&tilde;&tilde;&tilde;&tilde;&tilde;
+        </p>
+
+        <h4 class="sponsors-header tk-korolev-compressed">Sponsors</h4>
+        <ul class="sponsor-list">
+            <li class="sponsor">
+                <a href="https://virrat.fi" target="_blank">
+                    <img src="/assets/images/sponsors/virrat.png" height="40" />
+                </a>
+            </li>
+            <li class="sponsor">
+                <a href="https://www.op.fi/web/op-virrat" target="_blank">
+                    <img src="/assets/images/sponsors/op-virrat.png" height="40" />
+                </a>
+            </li>
+            <li class="sponsor">
+                <a href="https://www.phpoy.fi/" target="_blank">
+                    <img src="/assets/images/sponsors/phpoy.png" height="40" />
+                </a>
+            </li>
+            <li class="sponsor">
+                <a href="https://ksat.fi" target="_blank">
+                    <img src="/assets/images/sponsors/ksat.png" height="40" />
+                </a>
+            </li>
+            <li class="sponsor">
+                <a href="https://www.vipstore.fi/" target="_blank">
+                    <img src="/assets/images/sponsors/vip-store.png" height="40" />
+                </a>
+            </li>
+        </ul>
+
+        <p class="paragraph">
+            &tilde;&tilde;&tilde;&tilde;&tilde;&tilde;&tilde;
+        </p>
+
+        <h4 class="sponsors-header tk-korolev-compressed">Supported By</h4>
+        <ul class="sponsor-list">
+            <li class="sponsor">
+                <a href="https://www.bosch.fi/" target="_blank">
+                    <img src="/assets/images/sponsors/bosch.png" height="40" />
+                </a>
+            </li>
+            <li class="sponsor">
+                <a href="https://www.k-rauta.fi/kaupat/virrat/" target="_blank">
+                    <img src="/assets/images/sponsors/k-rauta-virrat.png" height="40" />
+                </a>
+            </li>
+            <li class="sponsor">
+                <a href="https://www.pokory.fi/" target="_blank">
+                    <img src="/assets/images/sponsors/poko.png" height="40" />
+                </a>
+            </li>
+            <li class="sponsor">
+                <a href="https://www.tredu.fi/" target="_blank">
+                    <img src="/assets/images/sponsors/tredu.png" height="40" />
+                </a>
+            </li>
+            <li class="sponsor">
+                <a href="https://motivesafety.fi/" target="_blank">
+                    <img src="/assets/images/sponsors/motivesafety.png" height="40" />
+                </a>
+            </li>
+        </ul>
+
+        <p class="paragraph">
+            &tilde;&tilde;&tilde;&tilde;&tilde;&tilde;&tilde;
+        </p>
+
+        <h4 class="sponsors-header tk-korolev-compressed">Follow Us</h4>
+        <ul class="sponsor-list">
+            <li class="sponsor">
+                <a href="https://facebook.com/VirratHacklab/">
+                    <img height="64" src="/assets/images/social/fa-facebook.png" />
+                </a>
+            </li>
+            <li class="sponsor">
+                <a href="https://twitter.com/VirratHacklab/">
+                    <img height="64" src="/assets/images/social/fa-twitter.png" />
+                </a>
+            </li>
+            <li class="sponsor">
+                <a href="https://instagram.com/VirratHacklab/">
+                    <img height="64" src="/assets/images/social/fa-instagram.png" />
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>

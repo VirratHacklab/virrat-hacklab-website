@@ -1,0 +1,25 @@
+<div id="navigation-header">
+    <a class="menu-toggle" href="#navigation">
+        <img src="{{ "assets/images/menu.svg" | relURL }}" />
+    </a>
+    <div class="tk-korolev-compressed" id="title-text">VIRRAT HACKLAB</div>
+</div>
+<nav id="navigation">
+    <ul class="menu-list">
+        {{- $currentPage := . -}}
+        {{ range .Site.Menus.main }}
+            <li class="menu-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                <a class="tk-korolev-compressed nav-link" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+            </li>
+        {{ end }}
+    </ul>
+
+    <div id="language-select">
+        <span class="language-select-text tk-korolev-compressed">{{ i18n "languageSelection" }}</span>
+        <ul class="language-selector">
+            {{ range $.Site.Home.AllTranslations }}
+                <li class="tk-korolev-compressed"><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+</nav>

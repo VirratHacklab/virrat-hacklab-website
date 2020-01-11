@@ -1,0 +1,24 @@
+[languageSelection]
+    other = "Kielivalinta"
+
+[what]
+    other = "Mikä"
+[whatDescription]
+    other = "Hacklab on yhteisöllinen työpaja, jossa jäsenet voivat tehdä omia projektejaan yhteiskäyttöön hankituilla välineillä"
+[where]
+    other = "Missä"
+[whereDescription]
+    other = "Virrat Hacklab sijaitsee Tredun alakerrassa osoitteessa Sipiläntie 1. Pariovien päällä iso valaistu kyltti!"
+[join]
+    other = "Liity"
+[joinDescription]
+    other = "Lähetä vapaamuotoinen jäsenhakemus sähköpostiin osoitteeseen info@virrat.hacklab.fi Jäsenmaksu: 120€ / vuosi"
+
+[cloudProvider]
+    other = "Pilvikapasiteetin tarjoaa"
+[sponsors]
+    other = "Pääyhteistyökumppanit"
+[support]
+    other = "Yhteistyössä"
+[social]
+    other = "Seuraa meitä"

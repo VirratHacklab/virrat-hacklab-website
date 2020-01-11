@@ -1,0 +1,25 @@
+{{ define "main" }}
+    <section class="cards">
+        <div class="card">
+            <h2 class="card-header tk-korolev-compressed">{{ i18n "what" }}?</h2>
+            <p class="card-content">
+                {{ i18n "whatDescription" }}
+            </p>
+        </div>
+        <div class="card">
+            <h2 class="card-header tk-korolev-compressed">{{ i18n "where"}}?</h2>
+            <p class="card-content">
+                {{ i18n "whereDescription" }}
+            </p>
+        </div>
+        <div class="card">
+            <h2 class="card-header tk-korolev-compressed">{{ i18n "join" }}!</h2>
+            <p class="card-content">
+                {{ i18n "joinDescription" }}
+            </p>
+        </div>
+    </section>
+    <section class="map">
+        <img src="{{ "assets/images/166.png" | relURL }}" width="100%" />
+    </section>
+{{ end }}

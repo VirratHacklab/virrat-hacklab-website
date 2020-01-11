@@ -1,0 +1,20 @@
+
+{{ define "main" }}
+<main id="content">
+    <ul class="equipment-list">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+        {{ range .Pages.ByPublishDate }}
+            <li class="equipment">
+                <a class="equipment-link tk-korolev-compressed" href="{{ .URL }}">
+                    <h3 class="equipment-header">{{ .Title }}</h3>
+                    <div class="equipment-data">
+                        <img class="equipment-image" src="{{ .Params.small_image }}" />
+                        {{- partial "equipment.html" .}}
+                    </div>
+                </a>
+            </li>
+        {{ end }}
+    </ul>
+</main>
+{{ end }}

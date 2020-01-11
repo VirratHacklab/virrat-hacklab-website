@@ -1,0 +1,24 @@
+[languageSelection]
+    other = "Language"
+
+[what]
+    other = "What"
+[whatDescription]
+    other = "Hacklab is a community-driven workshop where members can make their own projects with shared equipment"
+[where]
+    other = "Where"
+[whereDescription]
+    other = "Virrat Hacklab is located at Sipiläntie 1. There is a big lit sign on top of the pair-doors!"
+[join]
+    other = "Join"
+[joinDescription]
+    other = "Send a free form email to info@virrat.hacklab.fi Price: 120€ / year"
+
+[cloudProvider]
+    other = "Cloud Capacity Provided By"
+[sponsors]
+    other = "Sponsors"
+[support]
+    other = "Supported By"
+[social]
+    other = "Follow Us"

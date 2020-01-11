@@ -1,0 +1,11 @@
+{{ if (not (isset .Params "disable_jumbotron" )) }}
+    <section id="jumbotron">
+        {{ if isset .Params "hero_image" }}
+            <div id="aspect-ratio" style="background-image: url({{ .Params.hero_image }})">
+        {{ else  }}
+            <div id="aspect-ratio" style="background-image: url({{ "assets/images/frontpage.jpg" | relURL }})">
+        {{ end }}
+            <img src="{{ "assets/images/169.png" | relURL }}" width="100%" />
+        </div>
+    </section>
+{{ end }}
