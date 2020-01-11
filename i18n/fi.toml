@@ -12,7 +12,11 @@
 [join]
     other = "Liity"
 [joinDescription]
-    other = "Lähetä vapaamuotoinen jäsenhakemus sähköpostiin osoitteeseen info@virrat.hacklab.fi Jäsenmaksu: 120€ / vuosi"
+    other = "Liity jäseneksi täyttämällä"
+[joinLink]
+    other = "jäsenhakemus."
+[joinPrice]
+    other = "Vuoden 2020 jäsenmaksu on 120€"
 
 [cloudProvider]
     other = "Pilvikapasiteetin tarjoaa"

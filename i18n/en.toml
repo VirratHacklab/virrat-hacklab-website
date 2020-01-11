@@ -12,7 +12,11 @@
 [join]
     other = "Join"
 [joinDescription]
-    other = "Send a free form email to info@virrat.hacklab.fi Price: 120€ / year"
+    other = "Join as a member by filling up an"
+[joinLink]
+    other = "application."
+[joinPrice]
+    other = "Membership price for 2020 is 120€"
 
 [cloudProvider]
     other = "Cloud Capacity Provided By"

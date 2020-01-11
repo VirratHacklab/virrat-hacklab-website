@@ -28,7 +28,7 @@ theme = "hacklab"
     weight = 2
 [[languages.fi.menu.main]]
     name = "BLOGI"
-    url = "/blogi/"
+    url = "/blog/"
     weight = 3
 [[languages.fi.menu.main]]
     name = "TIKIS"
@@ -52,9 +52,9 @@ theme = "hacklab"
     weight = 11
 [[languages.en.menu.main]]
     name = "HACKLAB"
-    url = "/"
+    url = "/hacklab/"
     weight = 12
 [[languages.en.menu.main]]
     name = "BLOG"
-    url = "/blogi/"
+    url = "/blog/"
     weight = 13
