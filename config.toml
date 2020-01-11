@@ -2,6 +2,7 @@ defaultContentLanguage = "fi"
 googleAnalytics = "UA-155551221-1"
 
 languageCode = "fi"
+baseURL = "https://legacy.virrat.hacklab.fi"
 
 title = "Virrat Hacklab"
 theme = "hacklab"
