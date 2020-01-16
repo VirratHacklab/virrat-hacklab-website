@@ -9,7 +9,17 @@
 <link rel="stylesheet" href="/css/hacklab.css">
 
 <script src="https://use.typekit.net/drz2eor.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script>
+    try {
+        Typekit.load({ async: true });
+    } catch(e) {
+        (function(window, document) {
+            document.addEventListener('DOMContentLoaded', function(event) {
+                document.getElementsByName('html')[0].classList.add('wf-failed');
+            });
+        }(window, window.document));
+    }
+</script>
 
 
 <script type="application/javascript">
@@ -44,7 +54,9 @@ if (!doNotTrack) {
     </div>
     <div id="logo">
         <video height="96" autoplay muted playsinline autobuffer>
-            <source src="/assets/videos/logo_notext_burst_96.mp4" type="video/mp4">
+            
+                <source src="/assets/videos/logo_notext_burst_96.mp4" type="video/mp4">
+            
             <img src="/assets/images/favicon.png" />
         </video>
     </div>
@@ -63,7 +75,11 @@ if (!doNotTrack) {
     <ul class="equipment-list">
         <h1>Hacklab</h1>
         <p class="paragraph">
-    Hacklab on yhteisöllinen työpaja, jossa jäsenet voivat tehdä omia projektejaan yhteiskäyttöön hankituilla välineillä. Tällä hetkellä kalustoon kuuluu:
+    Hacklab on yhteisöllinen työpaja, jossa jäsenet voivat tehdä omia projektejaan yhteiskäyttöön hankituilla välineillä.
+    Käytettävissä on allalolevan listan lisäksi pylväspora, Dremelin pienoisporakone, jyrsin ja kaiverrin, sekä perus käsityökalut.
+    Kalustoa täydennetään jäsenten toiveiden mukaan! Jätä oma toiveesi
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZNfF2wqqxeGD5uk6jS_4kaSmm4siE8JGRtQd_0YRn8UTb4w/viewform" target="_blank">
+    tällä lomakkeella</a>
 </p>
 
         
@@ -105,6 +121,24 @@ if (!doNotTrack) {
     
         <dt>Materiaalit:</dt>
         <dd>Akryyli, vaneri</dd>
+    
+</dl>
+
+                    </div>
+                </a>
+            </li>
+        
+            <li class="equipment">
+                <a class="equipment-link tk-korolev-compressed" href="/hacklab/equipment/electronics/">
+                    <h3 class="equipment-header">Elektroniikka-asema</h3>
+                    <div class="equipment-data">
+                        <img class="equipment-image" src="/assets/images/equipment/laser.jpg" /><dl class="equipment-details">
+    
+        <dt>Tyyppi:</dt>
+        <dd>Asema</dd>
+    
+        <dt>Työskentelyalue:</dt>
+        <dd>Pöytä</dd>
     
 </dl>
 
@@ -176,7 +210,7 @@ if (!doNotTrack) {
             </li>
         
             <li class="menu-item ">
-                <a class="tk-korolev-compressed nav-link" href="/blogi/">BLOGI</a>
+                <a class="tk-korolev-compressed nav-link" href="/blog/">BLOGI</a>
             </li>
         
             <li class="menu-item ">

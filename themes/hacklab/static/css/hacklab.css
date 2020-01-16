@@ -44,6 +44,10 @@ p {
     font-family: 'Serenity', sans-serif;
 }
 
+body {
+    font-family: 'Serenity', sans-serif;
+}
+
 pre {
     overflow: auto;
 }

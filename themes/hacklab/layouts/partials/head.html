@@ -8,7 +8,17 @@
 <link rel="stylesheet" href="{{ "css/hacklab.css" | relURL }}">
 
 <script src="https://use.typekit.net/drz2eor.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script>
+    try {
+        Typekit.load({ async: true });
+    } catch(e) {
+        (function(window, document) {
+            document.addEventListener('DOMContentLoaded', function(event) {
+                document.getElementsByName('html')[0].classList.add('wf-failed');
+            });
+        }(window, window.document));
+    }
+</script>
 
 {{ template "_internal/google_analytics.html" . }}
 {{ template "_internal/opengraph.html" . }}

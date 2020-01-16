@@ -6,7 +6,11 @@
     </div>
     <div id="logo">
         <video height="96" autoplay muted playsinline autobuffer>
-            <source src="{{ "assets/videos/logo_notext_burst_96.mp4" | relURL }}" type="video/mp4">
+            {{ if eq .Section "tikis" }}
+                <source src="{{ "assets/videos/tikis_notext_pixelated_320.mp4" | relURL }}" type="video/mp4">
+            {{ else  }}
+                <source src="{{ "assets/videos/logo_notext_burst_96.mp4" | relURL }}" type="video/mp4">
+            {{ end }}
             <img src="{{ "assets/images/favicon.png" | relURL }}" />
         </video>
     </div>

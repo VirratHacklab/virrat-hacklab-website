@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/hacklab/equipment/ender3/</guid>
-      <description> Hieno tulstin! </description>
+      <description>Lisätietoja tulee jatkossa tähän </description>
     </item>
     
     <item>
@@ -25,7 +25,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/hacklab/equipment/laser/</guid>
-      <description>Tyyppi: Hiilidioksidilaser (CO2 carbon dioxide laser) Teho: 60W Työskentelyalue: 500 x 700 Materiaalit: Akryyli, vaneri   </description>
+      <description>Lisätietoja tulee jatkossa tähän </description>
+    </item>
+    
+    <item>
+      <title>Elektroniikka-asema</title>
+      <link>/hacklab/equipment/electronics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/hacklab/equipment/electronics/</guid>
+      <description>Työpöydällä on oma savunpoisto ja löydät sieltä ainakin seuraavat välineet:  Kolvi (Weller) Puhallinjuotin IR alalämmöllä Labrapoweri 0-30V 10A Labrapoweri 0-24V 10A Skooppi  </description>
     </item>
     
     <item>
@@ -34,7 +43,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/hacklab/equipment/folgertech-ft5/</guid>
-      <description>WIKI 3D-Tulostin Ender 3 Tyyppi:  Teho: 60W Työskentelyalue: 500 x 700 Materiaalit: Akryyli, vaneri     </description>
+      <description>Lisätietoja tulee jatkossa tähän </description>
     </item>
     
     <item>
@@ -43,7 +52,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/hacklab/equipment/workbee/</guid>
-      <description>WIKI 3D-Tulostin Ender 3 Tyyppi: Hiilidioksidilaser (CO2 carbon dioxide laser) Teho: 60W Työskentelyalue: 500 x 700 Materiaalit: Akryyli, vaneri     </description>
+      <description>Lisätietoja tulee jatkossa tähän </description>
     </item>
     
   </channel>

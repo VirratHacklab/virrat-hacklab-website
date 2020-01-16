@@ -43,58 +43,107 @@
   </url>
   
   <url>
-    <loc>/blogi/</loc>
+    <loc>/blog/</loc>
     <lastmod>2018-02-18T13:30:00+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/blogi/"
+                href="/en/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fi"
-                href="/blogi/"
+                href="/blog/"
                 />
   </url>
   
   <url>
-    <loc>/blogi/2018-02-18-iot-ohjelmointia/</loc>
+    <loc>/blog/2018-02-18-iot-ohjelmointia/</loc>
     <lastmod>2018-02-18T13:30:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/blogi/2017-11-25-tiede-ja-teknologiakerho-kaynnistyy/</loc>
+    <loc>/blog/2017-11-25-tiede-ja-teknologiakerho-kaynnistyy/</loc>
     <lastmod>2017-11-25T12:44:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/blogi/2017-11-06-tiede-ja-teknologiakerho-x-bosch/</loc>
+    <loc>/blog/2017-11-06-tiede-ja-teknologiakerho-x-bosch/</loc>
     <lastmod>2017-11-06T18:41:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/tikis/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/hacklab/equipment/ender3/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/hacklab/equipment/ender3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fi"
+                href="/hacklab/equipment/ender3/"
+                />
   </url>
   
   <url>
     <loc>/hacklab/equipment/laser/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/hacklab/equipment/laser/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fi"
+                href="/hacklab/equipment/laser/"
+                />
+  </url>
+  
+  <url>
+    <loc>/hacklab/equipment/electronics/</loc>
   </url>
   
   <url>
     <loc>/hacklab/equipment/folgertech-ft5/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/hacklab/equipment/folgertech-ft5/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fi"
+                href="/hacklab/equipment/folgertech-ft5/"
+                />
   </url>
   
   <url>
     <loc>/hacklab/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/hacklab/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fi"
+                href="/hacklab/"
+                />
   </url>
   
   <url>
     <loc>/hacklab/equipment/workbee/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/hacklab/equipment/workbee/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fi"
+                href="/hacklab/equipment/workbee/"
+                />
   </url>
   
   <url>

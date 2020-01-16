@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tapahtumats on Virrat Hacklab</title>
+    <title>Tapahtumat on Virrat Hacklab</title>
     <link>/tapahtumat/</link>
-    <description>Recent content in Tapahtumats on Virrat Hacklab</description>
+    <description>Recent content in Tapahtumat on Virrat Hacklab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fi</language>
     <lastBuildDate>Thu, 15 Mar 2018 09:20:00 +0200</lastBuildDate>
@@ -18,7 +18,7 @@
       
       <guid>/tapahtumat/2020-03-15-avoimet-ovet/</guid>
       <description>&lt;p class=&#34;paragraph&#34;&gt;
-    Virrat Hacklab ry järjestää avoimet ovet lauantaina 30.3. klo 14:00 alkaen. Tervetuloa katsomaan mitä laitteita tiloistamme löytyy ja keskustelemaan 
+    Virrat Hacklab ry järjestää avoimet ovet lauantaina 30.3. klo 14:00 alkaen. Tervetuloa katsomaan mitä laitteita tiloistamme löytyy ja keskustelemaan
     toiminnasta!
 &lt;/p&gt;
 </description>

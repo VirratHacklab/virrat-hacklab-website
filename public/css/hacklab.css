@@ -1,10 +1,24 @@
-a {
+html {
+    color: #ffffff;
+}
+html.wf-active {
+    color: #0c1b29;
+}
+
+html a {
+    color: #ffffff;
+}
+html.wf-active a {
     text-decoration: none;
     color: #2885e8;
 }
-a:active {
+html a:active {
+    color: #ffffff;
+}
+html.wf-active a:active {
     color: #0c1b29;
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     font-family: 'korolev-compressed', sans-serif;
@@ -27,6 +41,10 @@ h4 {
 p {
     font-size: 1.25rem;
     line-height: 1.5rem;
+    font-family: 'Serenity', sans-serif;
+}
+
+body {
     font-family: 'Serenity', sans-serif;
 }
 
@@ -156,6 +174,9 @@ pre {
     line-height: 2em;
 }
 #navigation .menu-item.active a {
+    color: #ffffff;
+}
+html.wf-active #navigation .menu-item.active a {
     color: #0c1b29;
 }
 #language-select {
@@ -210,6 +231,17 @@ pre {
 #rules ul {
     margin: 1em;
     list-style-type: none;
+}
+#rules ul.disc {
+    list-style-type: disc;
+    margin: 1rem 0.5rem;
+}
+#rules ul.disc li {
+    margin-top: 0;
+    font-size: 1rem;
+}
+#rules ul.no-margin li {
+    margin-top: 0;
 }
 #rules li {
     margin-top: 1em;
@@ -302,7 +334,9 @@ pre {
 }
 .equipment-details {
     width: 100%;
-    margin-top: 1rem;
+    color: #0c1b29;
+    font-family: serenity, sans-serif;
+    font-size: 1.25rem;
 }
 .equipment-details dt {
     display: block;
@@ -310,6 +344,14 @@ pre {
     width: 6em;
     text-align: right;
     margin-right: 1rem;
+}
+
+.article-date {
+    display: block;
+    font-size: 0.75rem;
+    line-height: 0.75rem;
+    color: #0c1b29;
+    margin-top: 0rem;
 }
 
 ul.disc {
@@ -348,6 +390,12 @@ ul.disc {
         padding: 2rem 0;
     }
     #logo {
+        left: 2rem;
+    }
+    #hidden-logo {
+        left: 2rem;
+    }
+    #hidden-logo.move-left {
         left: 2rem;
     }
     .cards {

@@ -9,7 +9,17 @@
 <link rel="stylesheet" href="/css/hacklab.css">
 
 <script src="https://use.typekit.net/drz2eor.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script>
+    try {
+        Typekit.load({ async: true });
+    } catch(e) {
+        (function(window, document) {
+            document.addEventListener('DOMContentLoaded', function(event) {
+                document.getElementsByName('html')[0].classList.add('wf-failed');
+            });
+        }(window, window.document));
+    }
+</script>
 
 
 <script type="application/javascript">
@@ -27,7 +37,7 @@ if (!doNotTrack) {
 
 <meta property="og:title" content="Avoimet Ovet" />
 <meta property="og:description" content="
-    Virrat Hacklab ry järjestää avoimet ovet lauantaina 30.3. klo 14:00 alkaen. Tervetuloa katsomaan mitä laitteita tiloistamme löytyy ja keskustelemaan 
+    Virrat Hacklab ry järjestää avoimet ovet lauantaina 30.3. klo 14:00 alkaen. Tervetuloa katsomaan mitä laitteita tiloistamme löytyy ja keskustelemaan
     toiminnasta!
 
 " />
@@ -49,7 +59,9 @@ if (!doNotTrack) {
     </div>
     <div id="logo">
         <video height="96" autoplay muted playsinline autobuffer>
-            <source src="/assets/videos/logo_notext_burst_96.mp4" type="video/mp4">
+            
+                <source src="/assets/videos/logo_notext_burst_96.mp4" type="video/mp4">
+            
             <img src="/assets/images/favicon.png" />
         </video>
     </div>
@@ -66,21 +78,21 @@ if (!doNotTrack) {
 <article id="content">
             <h1 id="page-header">Avoimet Ovet</h1>
             <p class="paragraph">
-    Olemme ehtineet toimimaan paikkakunnalla jo kohta kaksi vuotta ja uusiin tiloihin muuton myötä saamme vihdoin pidettyä suurelle yleisölle 
-    avoimet ovet. Keväällä käyntiin pyörähtää myös PoKo ry:n kanssa yhdessä suunniteltu hanke ELY-keskuksen kanssa. Pääsemme hankkimaan uutta laitteistoa 
-    ja laajentamaan kapasiteettia. Avoimissa ovissa pääset kuulemaan mitä hankintasuunnitelmaamme kuuluu kahden seuraavan vuoden ajalle ja mihin toimintaa 
+    Olemme ehtineet toimimaan paikkakunnalla jo kohta kaksi vuotta ja uusiin tiloihin muuton myötä saamme vihdoin pidettyä suurelle yleisölle
+    avoimet ovet. Keväällä käyntiin pyörähtää myös PoKo ry:n kanssa yhdessä suunniteltu hanke ELY-keskuksen kanssa. Pääsemme hankkimaan uutta laitteistoa
+    ja laajentamaan kapasiteettia. Avoimissa ovissa pääset kuulemaan mitä hankintasuunnitelmaamme kuuluu kahden seuraavan vuoden ajalle ja mihin toimintaa
     lähdetään laajentamaan seuraavaksi.
 </p>
 <p class="paragraph">
     <img src="/assets/images/posts/P7261824.jpg" class="article-small-image" />
-    Yhdistys on ehtinyt järjestää olemassaolonsa aikana lasten ja nuorten teknistä, tieteellistä ja kädentaidollista osaamista edistävää toimintaa useassa 
-    eri muodossa. Viime vuoden tammikuussa aloitettu lasten ja nuorten Tiede- ja Teknologiakerho TIKIS jatkaa toimintaansa kahden eri ryhmän voimin. 
+    Yhdistys on ehtinyt järjestää olemassaolonsa aikana lasten ja nuorten teknistä, tieteellistä ja kädentaidollista osaamista edistävää toimintaa useassa
+    eri muodossa. Viime vuoden tammikuussa aloitettu lasten ja nuorten Tiede- ja Teknologiakerho TIKIS jatkaa toimintaansa kahden eri ryhmän voimin.
     <p class="paragraph">
-        Viime vuonna ekaluokkalaisten lasten kanssa aloitetussa kerhossa purettiin vanhaa elektroniikkaa, rakennettiin taidetta ja pidettiin taidennäyttely. 
+        Viime vuonna ekaluokkalaisten lasten kanssa aloitetussa kerhossa purettiin vanhaa elektroniikkaa, rakennettiin taidetta ja pidettiin taidennäyttely.
         Suurin osa teoksista on edelleen nähtävissää labilla.
     </p>
     <p class="paragraph">
-        Aprillipäivänä starttaa lukioikäisille suunnattu TIKIS BrainTech kokonaisuus, joka keskittyy robotiikkaan yhdistyksemme toimintakaudelle valitun 
+        Aprillipäivänä starttaa lukioikäisille suunnattu TIKIS BrainTech kokonaisuus, joka keskittyy robotiikkaan yhdistyksemme toimintakaudelle valitun
         teeman mukaisesti.
     </p>
 </p>
@@ -130,7 +142,7 @@ if (!doNotTrack) {
             </li>
         
             <li class="menu-item ">
-                <a class="tk-korolev-compressed nav-link" href="/blogi/">BLOGI</a>
+                <a class="tk-korolev-compressed nav-link" href="/blog/">BLOGI</a>
             </li>
         
             <li class="menu-item ">
