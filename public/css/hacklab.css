@@ -346,6 +346,22 @@ html.wf-active #navigation .menu-item.active a {
     margin-right: 1rem;
 }
 
+.table {
+    text-align: left;
+}
+.table th {
+    background-color: #efefef;
+    padding: 0.5em 0.75em;
+}
+.table td {
+    vertical-align: text-top;
+    padding: 0.5em 0.75em;
+    border-bottom: 1px dashed #c0c0c0;
+}
+.table td.no-border {
+    border: none;
+}
+
 .article-date {
     display: block;
     font-size: 0.75rem;

@@ -4,10 +4,203 @@ data_list:
     - {dt: 'Tyyppi', dd: 'Hiilidioksidilaser (CO2)' }
     - {dt: 'Teho', dd: '60W' }
     - {dt: 'Työskentelyalue', dd: '500 x 700' }
-    - {dt: 'Materiaalit', dd: 'Akryyli, vaneri' }
 small_image: '/assets/images/equipment/laser.jpg'
 hero_image: '/assets/images/equipment/laser.jpg'
 ---
+
 <p class="paragraph">
-    Lisätietoja tulee jatkossa tähän
+    Seuraavat listat ovat suurilta osin suoraan lainattu <a href="http://www.atxhackerspace.org/wiki/Laser_Cutter_Materials" target="_blank">ATX Hackerspacen</a>
+    laatimista listoista. Meidän laaserilla on toistaiseksi leikattu ja kaiverrettu akryyliä, vaneria, paperia, kartonkia, huopaa ja nahkaa. Muilta osin
+    omakohtaisia kokemuksia täytyy hankkia lisää.
 </p>
+
+<h2>ÄLÄ KOSKAAN LEIKKAA NÄITÄ MATERIAALEJA!</h2>
+<table class="table">
+    <tr>
+        <th>Materiaali</th>
+        <th>VAARA!</th>
+        <th>Syy/Seuraus</th>
+    </tr>
+    <tr>
+        <td>PVC (Poly Vinyl Chloride)/Vinyyli/Pleather/Keinotekoinen nahka</td>
+        <td>Leikatessa vapautuu kloorikaasua</td>
+        <td>Pilaa optiikan. Aiheuttaa korroosiota metalliosiin. Pilaa moottorien ohjausjärjestelmän</td>
+    </tr>
+    <tr>
+        <td>Paksu (&gt;1mm) Polykarbonaatti/Lexan</td>
+        <td>Leikkautuu todella huonosti. Värjäytyy. Syttyy tuleen.</td>
+        <td>
+            Polykarbonaatti hajottaa infarpunasäteilyä tehokkaasti. Tämä johtuu laserin aallonpituudesta.
+            Polykarbonaatti synnyttää leikattaessa nauhamaisia savupilviä, jotka leijailevat ylöspäin, pilaavat optiikan ja sotkevat koneen
+        </td>
+    </tr>
+    <tr>
+        <td>ABS</td>
+        <td>Sulaa. Leikatessa vapautuu vetysyanidia</td>
+        <td>
+            Ei leikkaannu hyvin. Sulaa ja syttyy helposti tuleen ja jättää jälkeensä sulaneita mölttejä leikkuualustaan.
+            Ei sovellu myöskään kaiverrukseen sulamisen takia. Vetysyanidi on erittäin epäterveellistä
+        </td>
+    </tr>
+    <tr>
+        <td>Suurtiheyspolyeteeni PEHD/HDPE (Yhdysvalloissa gallonan maito)</td>
+        <td>Sulaa. Syttyy tuleen</td>
+        <td>
+            Sulaessaan sulaa klimpeiksi. Syttyy tuleen. Älä käytä.
+        </td>
+    </tr>
+    <tr>
+        <td>Polystyreeni</td>
+        <td>Syttyy tuleen</td>
+        <td>
+            Syttyy tuleen ja palaa todella nopeasti. Sulaa ja vain ohut kappale leikkaantuu. #1 materiaali joka sytyttää tulipaloja!
+        </td>
+    </tr>
+    <tr>
+        <td>Polypropyleeni</td>
+        <td>Syttyy tuleen</td>
+        <td>
+            Kuten Polystyreeni syttyy tuleen ja sulaa. Sulaneet tipat jatkavat palamista ja jäähtyessään muuttuvat kivikoviksi
+        </td>
+    </tr>
+    <tr>
+        <td>Epoksi</td>
+        <td>Palaa. Savuaa</td>
+        <td>
+            Epoksi on alifaattinen hartsi, jossa on voimakkaasti ristisilloittuneet hiiliketjut. CO2 laaseri ei saa leikattua tätä materiaalia ja
+            tuloksena on palanut sotku, joka vapauttaa vaarallisia höyryjä (kuten syanidi). Epoksilla päällystettyjä materiaalia tai epoksihartsikappaleita
+            ei saa laittaa laaseriin. (kts. Lasikuitu)
+        </td>
+    </tr>
+    <tr>
+        <td>Lasikuitu</td>
+        <td>Leikatessa vapautuu vaarallisia höyryjä</td>
+        <td>
+            Leikkaamattomaksi kelpaamattomien aineiden sekoitus: Lasi (vain merkkaus) ja epoksi hartsi (vaaralliset höyryt)
+        </td>
+    </tr>
+    <tr>
+        <td>Päällystetty hiilikuitu</td>
+        <td>Leikatessa vapautuu vaarallisia höyryjä</td>
+        <td>
+            Kahden materiaalin sekoitus. Hiilikuitumattoa pystyy leikkaamaan, mutta saattaa rispaantua. Päällystettyä hiilikuitua ei voi leikata
+        </td>
+    </tr>
+    <tr>
+        <td>Ruoka-aineet</td>
+        <td>Ihmiset leikkaavat laaserilla materiaalia jotka luovuttavat myrkyllisiä materiaaleja, joita ei voi syödä</td>
+        <td>
+            Olemme koittaneet leikata laaserilla paistettua piparitaikinaa ja se onnistuu kyllä, mutta leikatessa vapautuu höyryjä jotka saattavat
+            aiheuttaa pahoinvointia. Piparkakkutaikina myös muuttuu leikatessa (palaessaan) todella kitkeräki ja siten syömäkelvottomaksi
+        </td>
+    </tr>
+    <tr>
+        <td>Tarrapintaiset materiaalit</td>
+        <td>Tahraa optiikan</td>
+        <td>
+            On olemassa monia materiaaleja joita <b>normaalisti</b> voi leikata, mutta jos valmistaja on lisännyt näihin materiaaleihin tarrapinnan
+            ei niitä voi sen jälkeen laaserilla leikata. Leikatessa liimapintaa vapautuu höyryjä jotka sumentavat optiikan. Kiinnittyessään linsseihin
+            liima voi pahimmassa tapauksessa kuumentuessaan ja sitten taas jäähtyessään halkaista linssin. Liimajäämät ovat haitallisempia, kuin mitä
+            epoksi hartsista jää ja sitä on miltei mahdoton poistaa linsseistä vahingoittamatta niitä. Tämä johtaa linssin uusimiseen
+        </td>
+    </tr>
+    <tr>
+        <td colspan=3 class="no-border">
+            <h2>Turvalliset materiaalit</h2>
+            <h3>Leikkaaminen</h3>
+        </td>
+    </tr>
+    <tr>
+        <th>Materiaali</th>
+        <th>Paksuus</th>
+        <th>Huomioita</th>
+    </tr>
+    <tr>
+        <td>Monet puut</td>
+        <td>6mm</td>
+        <td>Vältä öljyisiä ja hartsisia puita, voivat syttyä palamaan</td>
+    </tr>
+    <tr>
+        <td>Vaneri</td>
+        <td>6mm</td>
+        <td>Vanerissa täytyy olla vaalea liima. Musta liima estää leikkaamisen. 6mm vaneri saattaa vaatia leikkaantuakseen kaksi ajoa</td>
+    </tr>
+    <tr>
+        <td>MDF</td>
+        <td>6mm</td>
+        <td>MDF:ää voi leikata mutta leikkuujälki saattaa olla hiiltyneempi kuin muissa materiaaleissa</td>
+    </tr>
+    <tr>
+        <td>Paperi ja korttikartonki</td>
+        <td>Ohut</td>
+        <td>Leikkaantuu helposti ja todella nopeasti</td>
+    </tr>
+    <tr>
+        <td>Pahvi ja kartonki</td>
+        <td>Paksumpi</td>
+        <td>Leikkaantuu helposti, mutta voi syttyä tuleen.</td>
+    </tr>
+    <tr>
+        <td>Korkki</td>
+        <td>3mm</td>
+        <td>Korkkia voi leikata, mutta leikkausjäljen laatu riippuu itse korin laadusta ja paksuudesta</td>
+    </tr>
+    <tr>
+        <td>Akryyli/Lucite/Pleksi/PMMA</td>
+        <td>6mm</td>
+        <td>Leikkaantuu helposti ja jätää hienon kiiltävän pinnan. 6mm akryyli saattaa vaatia leikkantuakseen kaksi ajoa</td>
+    </tr>
+    <tr>
+        <td>Kangas/Puuvilla/Huopa/Hamppu</td>
+        <td></td>
+        <td>Leikkaantuu helposti</td>
+    </tr>
+    <tr>
+        <td>Nahka/Mokkanahka</td>
+        <td>2mm</td>
+        <td>Pystyy leikkaamaan ja kaivertamaan, mutta haisee todella voimakkaasti</td>
+    </tr>
+    <tr>
+        <td>Magneettilevy</td>
+        <td></td>
+        <td>Leikkaantuu helposti</td>
+    </tr>
+    <tr>
+        <td colspan=3 class="no-border">
+            <h3>Kaivertaminen</h3>
+            <p class="paragraph">
+                Kaikkia leikattavia materiaaleja voi kaivertaa. Niiden lisäksi myös seuraavia:
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <th>Materiaali</th>
+        <th>Huomioita</th>
+        <th>Varoitus</th>
+    </tr>
+    <tr>
+        <td>Lasi</td>
+        <td>Vihreä tuntuisi toimivan parhaiten, jälki näyttää hiekkapuhalletulta</td>
+        <td>Toistaiseksi vain lasilevyjä. Meillä on olemassa rulla pulloja ja sylinterin muotoisia kappaleita varten, mutta sitä ei ole vielä saatu kalibroitua</td>
+    </tr>
+    <tr>
+        <td>Keraaminen tiili</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Anodisoitu alumiini</td>
+        <td>Laaseri höyrystää adonisoinnin</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Maalatut ja päällystety materiaalit</td>
+        <td>Laaseri höyrystää maalin ja päällysteen</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Kivi/Marmori/Graniitti/Vuolukivi/Onyksi</td>
+        <td>Kaiverrusjälki valkoinen ja tekstuurimainen</td>
+        <td></td>
+    </tr>
+</table>
